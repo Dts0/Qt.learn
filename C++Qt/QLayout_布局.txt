@@ -1,0 +1,10 @@
+#include <QHBoxLayout>
+
+...
+
+[class] QHBoxLayout *Layout=new QHBoxLayout(this);//水平布局
+[class] QVBoxLayout//垂直布局
+[class] QGridLayout//网格布局
+
+//Layout->setParent(this);
+Layout->addWidget([items]);//添加需要布局的项

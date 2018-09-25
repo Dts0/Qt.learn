@@ -1,0 +1,12 @@
+/****************************************基于Qt5*******************************************/
+//1.键和槽
+
+//槽函数定义
+protected/*or else*/ slots:
+ void func_name();
+  
+
+connect(sender, SIGNAL(send_func), receiver, SLOT(receice_func));
+//or
+connect(sender,"send_func()",receiver,"receive_func()")
+//SIGNAL(),SLOT()是两个返回const char*的Qt宏

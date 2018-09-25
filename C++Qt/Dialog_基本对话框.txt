@@ -1,0 +1,7 @@
+QFileDialog//标准文件对话框
+QColorDialog//颜色
+QFontDialog//字体
+QInputDialog//输入
+QMessageBox//消息对话框
+
+QToolBox//工具盒

@@ -1,0 +1,16 @@
+
+1.//QFile
+    QFile *file=new QFile("../str.txt");
+    QString str="";
+
+    file->open(QFile::ReadOnly);
+    str.append(file->read(qint64(64)));
+    QLabel *l=new QLabel(str,this);
+    file->close();
+
+2.QTextStream;QDataStream;
+QFileInfo;//文件信息
+
+3.QDir;//目录操作
+
+4.

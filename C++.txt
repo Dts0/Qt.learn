@@ -1,0 +1,10 @@
+//1.可以用#define const 去常量性
+or #define private public 改访问控制
+//eg:
+#define const //const
+const QString str("Hello");
+#undef const
+    str="Yes";
+    QLabel *l=new QLabel(str,this);
+
+可以通过编译and正常运行

@@ -1,0 +1,61 @@
+//1.UDP协议
+#include <QUdpSocket>
+#include <QHostAddress>
+//.h
+class ...
+{
+    ...
+    int port;//端口号
+    QUdpSocket *socket;//套接字
+}
+
+
+//.cpp
+...
+    port=5555;
+    socket=new QUdpSocket(this);
+    connect(CloseBtn,SIGNAL(clicked(bool)),this,SLOT(CloseBtnClicked()));
+    connect(socket,SIGNAL(readyRead()),this,SLOT(dataReceived()));
+//用信号和槽处理
+
+    if(!socket->bind(port))//判断能连接端口
+        QMessageBox::information(this,"Error","UDP Socket Error!");
+
+...
+    while(socket->hasPendingDatagrams())
+    {
+        QByteArray dataPram;
+        dataPram.resize(socket->pendingDatagramSize());
+
+        socket->readDatagram(dataPram.data(),dataPram.size());
+
+        Text->append(QTime::currentTime().toString()+"\n"+QString(dataPram.data()));
+    }//read or write
+
+//2.TCP协议
+#include <QHostInfo>
+#include <QHostAddress>
+#include <QTcpSocket>
+...
+    bool status;//show if connected
+    int port;
+    QHostAddress *serverIP;//ip
+    QString UserName;
+    QTcpSocket *socket;
+...
+//similer to UDP
+
+//3.HTTP协议
+//Qt5中把QHTTP等类整合
+
+#include <QtNetwork>
+...
+QNetworkAccessManager *manager;
+QNetworkReply *reply;
+...
+manager->get(QNetworkRequest(QUrl("http://www.baidu.com")));//GetInfoFromUrl
+
+
+
+
+

@@ -1,0 +1,2 @@
+//1.debug生成时输出
+qDebug()<<"hello debug"
